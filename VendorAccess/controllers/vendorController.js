@@ -60,8 +60,11 @@ module.exports = (app,data,MongoClient,url,selectedShop)=>{
   })
 
   app.get('/bookings', (req, res)=>{
-    res.render('bookings',{data: selectedShop.slots});
-      
+    if(selectedShop.slots!=undefined){
+      res.render('bookings',{data: selectedShop.slots});
+    }else{
+      res.render('bookings',{data: []});
+    }
       console.log("in booking")
       console.log(data)
     
