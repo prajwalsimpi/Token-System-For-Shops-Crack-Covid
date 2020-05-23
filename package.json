@@ -1,0 +1,18 @@
+{
+  "name": "vendorpart",
+  "version": "1.0.0",
+  "description": "vendor section of the app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Prajwal Simpi",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.2",
+    "express": "^4.17.1",
+    "mongodb": "^3.5.7",
+    "nodemon": "^2.0.4"
+  }
+}
