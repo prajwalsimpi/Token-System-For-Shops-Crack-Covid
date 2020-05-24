@@ -41,19 +41,23 @@
     <div class="container-fluid">
       <%for(var j =0;j<Math.ceil(locals.shops.length / 4);j++){%>
       <div class="row">
-
-        <% for(var i=j;i<j+4;i++){%>
+        <%if(j==0){rem=0}else{rem=1}%>
+        <% for(var i=j*4+rem;i<j*4+4;i++){%>
           <% if(i>=locals.shops.length){%>
             <%break%>
             <%}%>
-        <div class="col-sm-3" onclick="location.href='http://tokensystem-silly-chipmunk-ne.eu-gb.mybluemix.net/shop?sname=<%=locals.shops[i].sname%>'">
+          
+        <div class="col-sm-3" >
+          <a href="shop?sname=<%=locals.shops[i].sname%>">
           <div class="card" >
                 <div class="card-body">
                   <h5 class="card-title"><%=locals.shops[i].sname%></h5>
                   <p class="card-subtitle mb-2 text-muted"><%=locals.shops[i].address%></p>
                 </div>
               </div>
+            </a>
         </div>
+      
         <%}%>
       </div>
       <%}%>
