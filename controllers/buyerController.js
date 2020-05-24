@@ -51,7 +51,7 @@ module.exports = (app, data,MongoClient,url) => {
             var col = db.collection('users')
             col.insertOne(req.body)
           })
-        res.redirect("/login")
+        res.redirect("/buyer/login")
     })
     app.post("/buyer/login",(req,res)=>{
         MongoClient.connect(url,(err,client)=>{
