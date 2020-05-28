@@ -60,13 +60,21 @@ module.exports = (app,data,MongoClient,url,selectedShop)=>{
   })
 
   app.get('/bookings', (req, res)=>{
-    if(selectedShop.slots!=undefined){
-      res.render('bookings',{data: selectedShop.slots});
-    }else{
-      res.render('bookings',{data: []});
-    }
+    MongoClient.connect(url,(err,client)=>{
+      var db = client.db('shoplist')
+      var col = db.collection('shops')
+      console.log(selectedShop.sname)
+      col.findOne({sname:selectedShop.sname},(err,selectedShop)=>{
+        console.log(selectedShop)
+        if(selectedShop!=undefined ){
+          res.render('bookings',{data: selectedShop.slots});
+        }else{
+          res.render('bookings',{data: []});
+        }
+      })
+    })
       console.log("in booking")
-      console.log(data)
+      //console.log(data)
     
 });
 
