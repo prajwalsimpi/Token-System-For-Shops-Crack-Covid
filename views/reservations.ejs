@@ -39,10 +39,11 @@
       <%for(var j =0;j<Math.ceil(locals.shops.length / 4);j++){%>
       <div class="row">
 
-        <% for(var i=j;i<j+4;i++){%>
+        <% for(var i=j*4+rem;i<j*4+4;i++){%>
           <% if(i>=locals.shops.length){%>
             <%break%>
             <%}%>
+        
         <div class="col-sm-3" >
           <div class="card" >
                 <div class="card-body">
