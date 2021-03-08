@@ -6,3 +6,5 @@ install npm
 run npm install in the directory  
 run npm start  
 access the app in http://localhost:3000  
+
+https://tokensystem-silly-chipmunk-ne.eu-gb.mybluemix.net/select
